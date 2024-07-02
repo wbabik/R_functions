@@ -155,7 +155,7 @@ bin2df <- function(bin){
   temp <- as.character(bin)
   res <- as.data.frame(sapply(temp, paste, collapse = ''))
   colnames(res) <- "seq"
-  res$label <- rownames(res)
+  res$label <- names(bin)
   rownames(res) <- c()
   res <- res %>% select(label, seq)
   return(res)
